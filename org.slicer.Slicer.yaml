@@ -251,6 +251,21 @@ modules:
       - type: git
         url: git://github.com/commontk/CTK.git
         commit: ec9fcee532fd9cdff74f96479197f626d8c71fe5
+
+  - name: PythonQt
+    buildsystem: qmake
+    build-options:
+      env:
+        PYTHON_PATH: /usr/include/python3.8
+        PYTHON_VERSION: 38
+    config-opts:
+      - PythonQt.pro
+    sources:
+      - type: git
+        url: git://github.com/MeVisLab/pythonqt.git
+        commit: 8137f1fff3d3996d8fb6a49c0f502852c29b929f
+      #- type: patch
+        #path: fix-python-path.patch
         
   - name: Slicer
     buildsystem: cmake
